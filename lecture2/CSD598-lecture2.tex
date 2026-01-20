@@ -26,6 +26,14 @@
 \setlength{\leftmargini}{0pt}
 \setlength{\leftmarginii}{1em}
 
+\newcommand\Wider[2][3em]{%
+\makebox[\linewidth][c]{%
+  \begin{minipage}{\dimexpr\textwidth+#1\relax}
+  \raggedright#2
+  \end{minipage}%
+  }%
+}
+
 %% Write out the names of graphics files being included 
 \newwrite\graphics
 \immediate\openout\graphics=\jobname.graphics%
@@ -39,12 +47,14 @@
 }
 
 
-\title{Title
+\title{CSD 598 - Winter 2026
   \\~\\
-  This is a template
+  % Epistemology and Ontology
+  % \\\&\\
+  Some thoughts on\\Silent Knowledge in Doing Science
 }
 \author{Pertti Palo} 
-\date{24 Feb 2015} 
+\date{20 Jan 2026} 
 
 
 \begin{document}
@@ -53,34 +63,227 @@
   \centering
 } 
 
-\frame{\frametitle{Introduction: The why}
+
+% \frame{
+%   \centering
+%   {
+%     \bf \Large 
+%     \usebeamercolor[fg]{title}
+%     Epistemology and Ontology
+    
+%     \vfill
+% %    \includegraphics[height=1.5cm]{figures/aalto_logo} 
+%   }
+% }
+
+
+% \frame{\frametitle{Definitions - one take}
+% \Wider{
+%   \begin{description}[\leftmargin=20pt]
+%     \item[Epistemology] "is the branch of philosophy that examines the nature,
+%     origin, and limits of knowledge. [\ldots] Epistemologists study the
+%     concepts of belief, truth, and justification to understand the nature of
+%     knowledge. To discover how knowledge arises, they investigate sources of
+%     justification, such as perception, introspection, memory, reason, and
+%     testimony."
+%     \item[Ontology] "is the philosophical study of being. [\ldots] To articulate
+%     the basic structure of being, ontology examines the commonalities among all
+%     things and investigates their classification into basic types, such as the
+%     categories of particulars and universals. [\ldots] Systems of categories aim
+%     to provide a comprehensive inventory of reality by employing categories such
+%     as substance, property, relation, state of affairs, and event."
+%   \end{description}
+%   See \cite{Wikipedia-Epistemology-2025,Wikipedia-Ontology-2026}
+%   }
+% }
+
+
+% \frame{\frametitle{Questions and thoughts to keep you thinking}
+% \begin{itemize}
+%   \item What do we assume to be true when using statistics?
+%   \item What do we assume to be true when doing empirical research?
+%   \item Does (can) one experiment refute generations of knowledge?
+%   \item Science is (also) an oral tradition. 
+%   \item Science relies heavily on (somewhat formalised) storytelling.
+% \end{itemize}
+% }
+
+
+% \frame{
+%   \centering
+%   {
+%     \bf \Large 
+%     \usebeamercolor[fg]{title}
+%     Discussion about the practical side of doing science
+    
+%     \vfill
+% %    \includegraphics[height=1.5cm]{figures/aalto_logo} 
+%   }
+% }
+
+
+\frame{\frametitle{If we are pressed for time}
+Possible topics are:
+\begin{itemize}
+  \item Reading
+  \item Note-taking in various contexts
+  \item Tools of note-taking
+  \item Writing
+  \item Blank page fixes
+  \item Dealing with problems
+\end{itemize}
+\vspace{.5cm}
+We will definitely cover
+\begin{itemize}
+  \item Power differentials
+  \item Relating to ideas
+  \item Pacing
+\end{itemize}
+}
+
+
+\frame{\frametitle{Reading}
+\begin{itemize}
+  \item How to read a paper? What's your strategy?
+  \item A lot of articles and books and resources are available through U of A.
+  % \item The process of doing research is not linear, unlike the stories in
+  % literature would have you believe.
+\end{itemize}
+}
+
+
+\frame{\frametitle{What to record when doing research}
+\begin{itemize}
+  \item This applies to studying, reading (also known as studying), recording
+  data, analysing data, and writing up the results.
+  \item Reflect on what you read: It's a good idea to keep a record of your
+  developing understanding and especially of the questions you have.
+  \item It's also a good idea to keep a record of any anomalies (or lack
+  thereof) in data gathering because that makes analysis easier.
+\end{itemize}
+}
+
+
+\frame{\frametitle{Tools of note-taking}
+\begin{itemize}
+  \item Notebooks are good and there are way more possibilities out there
+  beyond a regular composition notebook, which is a very solid choice though.
+  \item Knowledge management systems such as Obsidian, Notion, Logseq and
+  others can also be very useful, but might be more difficult and distracting
+  to use during data recording.
+  is here. 
+  \item If you like formal systems look up Zettelkasten.
+  \item Reflect on what you read: Keep your note-taking tools handy because
+  idle minds produce excellent ideas.
+\end{itemize}
+}
+
+
+\frame{\frametitle{Getting into writing}
+\begin{itemize}
+  \item Authorship guidelines and who gets invited to contribute to a paper.
+  \item The process is not linear, unlike the stories in literature would have
+  you believe.
+  \item Falsifiability and its problems.
+  \item How to separate personal experience from publishable stories while
+  being honest.
+  \item Rationalisation of results - Don't try to publish only negative results
+  unless you see papers like that already done.
+  \item Talk to people. Learn to scale the amount of detail you give.
+\end{itemize}
+}
+
+
+\frame{\frametitle{Dealing with blank page: Quick fixes}
+\begin{itemize}
+  \item One of the easiest solutions is: Make a mistake and then correct it.
+  \item If you foresee this cropping up, you can fix it before you get there by
+  note-taking: 
   \begin{itemize}
-  % \item Pre-speech articulation is interesting from several
-  %   points of view.
-  \item stuff
+    \item Reflect on other peoples texts. Even by just putting the article info
+    on the top of a page and then writing about the article as you read it
+    underneath.
+    \item Reflect on your own work. Guess what? You can apply the same
+    principle to planning research, to recording data, to analysing data.
+  \end{itemize} 
+\end{itemize}
+}
+
+
+\frame{\frametitle{Dealing with blank page: Slow fix}
+\begin{itemize}
+  \item If you have a lot of time -- a month or two -- to prepare, take up
+  journaling. 
+  \begin{itemize}
+    \item It does not really matter what you write about as long as you do so regularly. 
+    \item It will improve your writing in general.
+    \item It will most likely make the fear of blank page disappear.
+    \item And journaling has other benefits.
   \end{itemize}
+  \item And seek people who are willing to read your text and give it positive,
+  constructive feedback.
+  \item Negative feedback leads to avoidance behaviours.
+\end{itemize}
+}
+
+
+\frame{\frametitle{How to deal with problems}
+\begin{itemize}
+  \item Problems need about three (short) attempts before contacting the boss.
+  \begin{itemize}
+    \item This is not because you are expected to solve problems on your own.
+    \item It's because those documented attempts can provide a more experienced
+    person with information they need for solving the problem.
+  \end{itemize}
+  \item Don't try to solve things for too long on your own either. 
+  \begin{itemize}
+    \item If you can't solve it, get help.
+    \item Also, if you don't know how to attempt a solution, get help.
+  \end{itemize}
+  \item If something comes up that will change plans -- things take longer,
+  you can't work as fast as you thought, etc. -- let others know earlier
+  rather than later and they'll like you for it.
+\end{itemize}
+}
+
+
+\frame{\frametitle{Power differentials}
+\begin{itemize}
+  \item Academia is littered with power differentials.
+\end{itemize}
+}
+
+
+\frame{\frametitle{Recycle ideas, throw away ideas}
+\begin{itemize}
+  \item Don't reinvent the wheel unless absolutely necessary.
+  \item Don't get married to your ideas.
+  \item Intuition takes time to work.
+\end{itemize}
+}
+
+
+\frame{\frametitle{Pace yourself, celebrate often}
+\begin{itemize}
+  \item It will take longer than you think.
+  \item It actually still does with 25 years of experience.
+  \item Get enough rest.
+  \item While they can be impressive, sprints can't last much longer than a
+  week.
+  \item Our work is ephemeral. Take the time to mark and celebrate each
+  milestone.  
+\end{itemize}
 }
 
 
 \frame{\frametitle{References}
-  
-\bibliographystyle{apalike}
-\bibliography{science_combined}
+
+Many thanks to the CSB Monday morning speech coffee group for essentially
+writing most of this lecture.
+
+% \bibliographystyle{apalike}
+% \bibliography{science_combined}
 
 }
-
-\frame{
-  \centering
-  {
-    \bf \Large 
-    \usebeamercolor[fg]{title}
-    Something else i.e. section title
-    
-    \vfill
-%    \includegraphics[height=1.5cm]{figures/aalto_logo} 
-  }
-}
-
-
 \end{document}
 
