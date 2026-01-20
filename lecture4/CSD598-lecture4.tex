@@ -1,0 +1,154 @@
+\documentclass[12pt,a4,english,finnish,pdflatex%,handout
+]{beamer}
+\definecolor{MyGreen}{RGB}{50, 120, 50}
+\usecolortheme[named=MyGreen]{structure}
+
+\usepackage{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb} 
+\usepackage{animate}
+\usepackage{multimedia}
+
+\usepackage{natbib}
+\bibpunct[: ]{(}{)}{,}{}{}{;}
+
+\usepackage{tikz}
+
+\usepackage{tipa}
+
+\usepackage{hyperref}
+
+\setbeamertemplate{navigation symbols}{}
+
+\graphicspath{{figures/}}
+
+\setlength{\leftmargini}{0pt}
+\setlength{\leftmarginii}{1em}
+
+%% Write out the names of graphics files being included 
+\newwrite\graphics
+\immediate\openout\graphics=\jobname.graphics%
+\let\oincludegraphics\includegraphics% store original \includegraphics
+\renewcommand{\includegraphics}[2][]{% prepend to it (could also use xpatch, etc.)
+  \immediate\write\graphics{#2}
+  \oincludegraphics[#1]{#2}}
+
+\newcommand\Wider[2][3em]{%
+\makebox[\linewidth][c]{%
+  \begin{minipage}{\dimexpr\textwidth+#1\relax}
+  \raggedright#2
+  \end{minipage}%
+  }%
+}
+
+\newcommand{\kommentti}[1]{
+  {\bf[#1]}
+}
+
+
+\title{CSD 598 - Winter 2026
+  \\~\\
+  Descriptive statistics and data visualisation
+}
+\author{Pertti Palo} 
+\date{10 Feb 2026} 
+
+
+\begin{document}
+
+\frame{\titlepage
+  \centering
+} 
+
+\frame{
+  \centering
+  {
+    \bf \Large 
+    \usebeamercolor[fg]{title}
+    Reminder: Epistemology and Ontology
+    
+    \vfill
+%    \includegraphics[height=1.5cm]{figures/aalto_logo} 
+  }
+}
+
+
+\frame{\frametitle{Definitions}
+\Wider{
+  \begin{description}[\leftmargin=20pt]
+    \item[Epistemology] "is the branch of philosophy that examines \ldots"
+    \item[Ontology] "is the philosophical study of being\ldots"
+  \end{description}
+  See \cite{Wikipedia-Epistemology-2025,Wikipedia-Ontology-2026}
+  }
+}
+
+\frame{\frametitle{Causality}
+\begin{itemize}
+  \item We all know - or should know - by now that correlation does not imply
+  causation.
+  \item But what is causality?
+  \begin{itemize}
+    \item David Hume has said that causality can not be proven empirically
+    because we can not know if the world changes at a fundamental level.
+    \item Immanuel Kant has replied to this that causality is not a feature of
+    the universe, but rather a way or tool of reasoning.
+    \item In addition, some phenomena in quantum physics break causality
+    empirically. And in the general theory of relativity we can not say what
+    the order of two events occurring is because it depends on the point of
+    observation.
+    \item And this could all be wrong, but it's unlikely (or seems unlikely
+    given the evidence).
+  \end{itemize}
+  \item Unless this was not news, it should make one think. And that's what I'd
+  like to encourage in any case.
+\end{itemize}
+}
+
+\frame{\frametitle{Causality and other tools}
+\begin{itemize}
+  \item It is not enough to know how to use a tool, we should also understand
+  enough of its workings that we know
+  \begin{itemize}
+    \item the limits of our understanding
+    \item the limits of the tool
+  \end{itemize}
+  \item Statistics is a tool. Like causality.
+\end{itemize}
+}
+
+
+\frame{\frametitle{Reminder: Questions and thoughts to keep you thinking}
+\begin{itemize}
+  \item What do we assume to be true when using statistics?
+  \item What do we assume to be true when doing empirical research?
+  \item Does (can) one experiment refute generations of knowledge?
+  \item Science is (also) an oral tradition. 
+  \item Science relies heavily on (somewhat formalised) storytelling.
+\end{itemize}
+}
+
+
+\frame{
+  \centering
+  {
+    \bf \Large 
+    \usebeamercolor[fg]{title}
+    Descriptive statistics and data visualisation
+    
+    \vfill
+%    \includegraphics[height=1.5cm]{figures/aalto_logo} 
+  }
+}
+
+
+
+\frame{\frametitle{References}
+  
+\bibliographystyle{apalike}
+\bibliography{science_combined}
+
+}
+\end{document}
+
