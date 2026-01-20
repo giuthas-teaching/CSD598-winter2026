@@ -8,8 +8,11 @@ Lectures:
 - [2nd lecture](lecture2/CSD598-lecture2.pdf) 20 Jan 2026
 - 3rd lecture, slides on Canvas eventually, 27 Jan 2026
 - [4th lecture](lecture4/CSD598-lecture4.pdf) unfinished slides 3 Feb 2026
-<!-- - [5th lecture](CSD598-lecture5.pdf) 10 Feb 2026
-- [6th lecture](CSD598-lecture6.pdf) 24 Feb 2026 -->
+<!--
+- [5th lecture](lecture5/CSD598-lecture5.pdf) 10 Feb 2026
+- [6th lecture](lecture6/CSD598-lecture6.pdf) 24 Feb 2026 
+- [7th lecture](lecture7/CSD598-lecture7.pdf) 3 Mar 2026 
+-->
 
 (c) Pertti Palo 2026
 CC-by-nc-sa - see [License](LICENSE.md) for terms for using my 
