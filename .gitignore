@@ -1,6 +1,9 @@
 ## vscode settings
 .vscode
 
+## graphics lists that help weeding unneeded image files
+*.graphics
+
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof
