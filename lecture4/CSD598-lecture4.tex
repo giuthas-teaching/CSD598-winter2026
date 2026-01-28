@@ -52,7 +52,7 @@
   Descriptive statistics and data visualisation
 }
 \author{Pertti Palo} 
-\date{10 Feb 2026} 
+\date{3 Feb 2026} 
 
 
 \begin{document}
@@ -70,12 +70,21 @@
   {
     \bf \Large 
     \usebeamercolor[fg]{title}
-    Descriptive stats
-
-    Tell-show-do-apply
-    
+    Why do data exploration?
     \vfill
-%    \includegraphics[height=1.5cm]{figures/aalto_logo} 
+    \includegraphics[height=.8\textheight]{messing-around-vs-science.png}
+    {\tiny No Boilerplate: Hack your Brain with Powerlifting \url{https://www.youtube.com/watch?v=WxN9VzwoGGw}} 
+  }
+}
+
+
+\frame{
+  \centering
+  {
+    \bf \Large 
+    \usebeamercolor[fg]{title}
+    Descriptive stats    
+    \vfill
   }
 }
 
@@ -120,13 +129,34 @@
 }
 
 
-\frame{\frametitle{Dependence between variables}
-\begin{itemize}
-  \item Covariance
-  \item Pearson's $\rho$
-  \item Spearman's $\rho$
-  \item Distance correlation
-\end{itemize}
+\frame{\frametitle{Dependence between variables: The usual}
+  \begin{itemize}
+    \item Covariance: measure of the linear relationship between two variables.
+    \item Pearson's $\rho$: correlation of continuous variables
+    \item Spearman's $\rho$: correlation of ordering of variables
+  \end{itemize}
+  \vspace{.5cm}
+  \includegraphics[width=.3\columnwidth]{Spearman_fig1.svg.png}
+  \includegraphics[width=.3\columnwidth]{Spearman_fig2.svg.png}
+  \includegraphics[width=.3\columnwidth]{Spearman_fig3.svg.png}
+
+  Skbkekas, CC BY-SA 3.0, via Wikimedia Commons
+}
+
+
+\frame{\frametitle{Dependence between variables: Pearson vs Distance correlation}
+  \begin{columns}
+    \begin{column}{.49\textwidth}
+      \includegraphics[width=\columnwidth]{Correlation_examples2.svg.png}
+      Pearson correlation
+    \end{column}
+    \begin{column}{.49\textwidth}
+      \includegraphics[width=\columnwidth]{Distance_Correlation_Examples.svg.png}
+      Distance correlation
+    \end{column}
+  \end{columns}
+  \vspace{.5cm}
+  Denis Boigelot, CC BY-SA 3.0, via Wikimedia Commons
 }
 
 
@@ -138,10 +168,18 @@
     Visualisation
     
     \vfill
-%    \includegraphics[height=1.5cm]{figures/aalto_logo} 
+
+    \includegraphics[width=.4\textwidth]{not_a_pie_chart.jpg}
   }
 }
 
+
+\frame{\frametitle{Choosing a good graph}
+
+}
+
+
+    Tell-show-do-apply
 
 
 \frame{\frametitle{References}
