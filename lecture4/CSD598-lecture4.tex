@@ -61,12 +61,16 @@
   \centering
 } 
 
+\frame{\frametitle{Last time: Ethics}
+  Any questions? Any thoughts?
+}
+
 \frame{
   \centering
   {
     \bf \Large 
     \usebeamercolor[fg]{title}
-    Reminder: Epistemology and Ontology
+    Descriptive stats
 
     Tell-show-do-apply
     
@@ -76,58 +80,52 @@
 }
 
 
-\frame{\frametitle{Definitions}
-\Wider{
-  \begin{description}[\leftmargin=20pt]
-    \item[Epistemology] "is the branch of philosophy that examines \ldots"
-    \item[Ontology] "is the philosophical study of being\ldots"
-  \end{description}
-  See \cite{Wikipedia-Epistemology-2025,Wikipedia-Ontology-2026}
-  }
-}
+\frame{\frametitle{Central tendencies}
+\begin{columns}
+  \begin{column}{.5\textwidth}
+    \includegraphics[height=.9\textheight]{Visualisation_mode_median_mean.png}
+  \end{column}
 
-\frame{\frametitle{Causality}
-\begin{itemize}
-  \item We all know - or should know - by now that correlation does not imply
-  causation.
-  \item But what is causality?
-  \begin{itemize}
-    \item David Hume has said that causality can not be proven empirically
-    because we can not know if the world changes at a fundamental level.
-    \item Immanuel Kant has replied to this that causality is not a feature of
-    the universe, but rather a way or tool of reasoning.
-    \item In addition, some phenomena in quantum physics break causality
-    empirically. And in the general theory of relativity we can not say what
-    the order of two events occurring is because it depends on the point of
-    observation.
-    \item And this could all be wrong, but it's unlikely (or seems unlikely
-    given the evidence).
-  \end{itemize}
-  \item Unless this was not news, it should make one think. And that's what I'd
-  like to encourage in any case.
-\end{itemize}
-}
-
-\frame{\frametitle{Causality and other tools}
-\begin{itemize}
-  \item It is not enough to know how to use a tool, we should also understand
-  enough of its workings that we know
-  \begin{itemize}
-    \item the limits of our understanding
-    \item the limits of the tool
-  \end{itemize}
-  \item Statistics is a tool. Like causality.
-\end{itemize}
+  \begin{column}{.5\textwidth}
+    Cmglee, CC BY-SA 3.0, via Wikimedia Commons
+  \end{column}
+\end{columns}
 }
 
 
-\frame{\frametitle{Reminder: Questions and thoughts to keep you thinking}
+\frame{\frametitle{Dispersion and shape}
+
+\begin{columns}
+  \begin{column}{.35\textwidth}
+    Dispersion
+    \begin{itemize}
+      \item Range, quartiles: easy to calculate on samples
+      \item Standard deviation (SD), variance: most used
+      \item Average absolute deviation: more robust than SD
+    \end{itemize}
+    \vspace{.5cm}
+    Shape measures
+    \begin{itemize}
+      \item Skewness: which way does the distribution lean?
+      \item Kurtosis: tailedness, things get complex here
+    \end{itemize}
+  \end{column}
+
+  \begin{column}{.65\textwidth}
+    \includegraphics[width=\columnwidth]{Relationship_between_mean_and_median_under_different_skewness.png}
+
+    Diva Jain, CC BY-SA 4.0 international, via Wikimedia Commons
+  \end{column}
+\end{columns}
+}
+
+
+\frame{\frametitle{Dependence between variables}
 \begin{itemize}
-  \item What do we assume to be true when using statistics?
-  \item What do we assume to be true when doing empirical research?
-  \item Does (can) one experiment refute generations of knowledge?
-  \item Science is (also) an oral tradition. 
-  \item Science relies heavily on (somewhat formalised) storytelling.
+  \item Covariance
+  \item Pearson's $\rho$
+  \item Spearman's $\rho$
+  \item Distance correlation
 \end{itemize}
 }
 
@@ -137,7 +135,7 @@
   {
     \bf \Large 
     \usebeamercolor[fg]{title}
-    Descriptive statistics and data visualisation
+    Visualisation
     
     \vfill
 %    \includegraphics[height=1.5cm]{figures/aalto_logo} 
