@@ -49,8 +49,8 @@
 
 \title{CSD 598 - Winter 2026
   \\~\\
-  Inferential statistics\\
-  Metalevel look at CSD 501
+  From visualisation to inferential statistics\\
+  Was: Metalevel look at CSD 501
 }
 \author{Pertti Palo} 
 \date{10 Feb 2026} 
@@ -65,6 +65,17 @@
 
 \frame{\frametitle{Last time: Data exploration}
   Any questions? Any thoughts?
+}
+
+
+\frame{\frametitle{This time: From visualisation to inferential statistics}
+\begin{itemize}
+  \item Choosing a graph
+  \item Data exploration example
+  \item Causality -- to make sense of statistical dependence, correlation, and causality
+  \item Inferential statistics
+  \item Data analysis example
+\end{itemize}
 }
 
 
@@ -85,16 +96,6 @@
 }
 
 
-\frame{\frametitle{This time: Inferential statistics}
-\begin{itemize}
-  \item Data exploration example
-  \item Causality -- to make sense of statistical dependence, correlation, and causality
-  \item Inferential statistics
-  \item Data analysis example
-\end{itemize}
-}
-
-
 \frame{\frametitle{Exploration example}
   \begin{itemize}
     \item This comes from the latest data analysis I have run.
@@ -111,26 +112,16 @@
   {
     \bf \Large 
     \usebeamercolor[fg]{title}
-    Preliminaries: Epistemology and Ontology
+    Preliminary to inference: Causality
     \vfill
 %    \includegraphics[height=1.5cm]{figures/aalto_logo} 
   }
 }
 
 
-\frame{\frametitle{Definitions}
-\Wider{
-  \begin{description}[\leftmargin=20pt]
-    \item[Epistemology] "is the branch of philosophy that examines \ldots"
-    \item[Ontology] "is the philosophical study of being\ldots"
-  \end{description}
-  See \cite{Wikipedia-Epistemology-2025,Wikipedia-Ontology-2026}
-  }
-}
-
 \frame{\frametitle{Causality}
 \begin{itemize}
-  \item We all know - or should know - by now that correlation does not imply
+  \item We all know -- or should know -- by now that correlation does not imply
   causation.
   \item But what is causality?
   \begin{itemize}
@@ -138,10 +129,9 @@
     because we can not know if the world changes at a fundamental level.
     \item Immanuel Kant has replied to this that causality is not a feature of
     the universe, but rather a way or tool of reasoning.
-    \item In addition, some phenomena in quantum physics break causality
-    empirically. And in the general theory of relativity we can not say what
-    the order of two events occurring is because it depends on the point of
-    observation.
+    \item Empirically, some phenomena in quantum physics break causality. And
+    in the general theory of relativity we can not say what the order of two
+    events occurring is because it depends on the point of observation.
     \item And this could all be wrong, but it's unlikely (or seems unlikely
     given the evidence).
   \end{itemize}
@@ -153,23 +143,12 @@
 \frame{\frametitle{Causality and other tools}
 \begin{itemize}
   \item It is not enough to know how to use a tool, we should also understand
-  enough of its workings that we know
+  enough of its workings so that we know
   \begin{itemize}
-    \item the limits of our understanding
-    \item the limits of the tool
+    \item the limits of our understanding and
+    \item the limits of the tool.
   \end{itemize}
   \item Statistics is a tool. Like causality.
-\end{itemize}
-}
-
-
-\frame{\frametitle{Reminder: Questions and thoughts to keep you thinking}
-\begin{itemize}
-  \item What do we assume to be true when using statistics?
-  \item What do we assume to be true when doing empirical research?
-  \item Does (can) one experiment refute generations of knowledge?
-  \item Science is (also) an oral tradition. 
-  \item Science relies heavily on (somewhat formalised) storytelling.
 \end{itemize}
 }
 
@@ -187,23 +166,79 @@
 }
 
 
-\frame{\frametitle{Analysis example}
+\frame{\frametitle{Types of inferential statistics}
+  Broadly speaking we have
   \begin{itemize}
-    \item This is the same example we looked at at the beginning, so same
-    caveats apply.
-    \item As it is unpublished, I ask it not be recorded, and hence will not
-    describe it here on the slides.
-    \item I am happy to talk about it in detail and show how I've done the
-    whole thing.
+    \item Tests which generally say 'statistically this claim seems believable' or
+    '\ldots does not seem believable'.
+    \item Models are generally predictive: Change this variable like so and
+    that variable tends to change like so.
+    \item And as usual the division between tests and models is fuzzy-ish. 
+    \item In other words, a test and a model can be the same thing. 
+    \item And in addition we have different types of statistics, but that is
+    for another day.
   \end{itemize}
 }
 
 
-\frame{\frametitle{References}
-  
-\bibliographystyle{apalike}
-\bibliography{science_combined}
-
+\frame{\frametitle{More on tests}
+  \begin{itemize}
+    \item Non-parametric tests: "This group tends to be larger than that group".
+    \item Parametric tests: "This group has a larger expected value than that group."
+    \item There are {\bf a lot} of both types of tests.
+  \end{itemize}
 }
+
+
+\frame{\frametitle{More on models}
+  \begin{itemize}
+    \item Models predict values of a variable (or a group of variables). 
+    \begin{itemize}
+      \item The predicting variable are usually called independent variables.
+      \item The predicted variable(s) is(are) usually called dependent variable(s).
+    \end{itemize}
+    \item Significance of a model can often be tested or approximately
+    evaluated, but this becomes more difficult with model complexity.
+    \item In general, added complexity can easily lead to a model that is
+    very difficult to understand. 
+    \item Visualisations help in understanding. They also help in diagnosis.
+  \end{itemize}
+}
+
+
+\frame{\frametitle{Model is a test, test is a model -- sometimes}
+  \begin{itemize}
+    \item ANOVA can be seen as a single predictor (controlled variable) linear
+      regression model where the only predictor is a categorical variable. 
+    \item Simple regression -- line fitting -- can be seen as another way of
+    testing for linear (Pearson's) correlation.
+  \end{itemize}
+}
+
+
+\frame{\frametitle{Model diagnosis}
+  \begin{itemize}
+    \item Collinearity (linear correlation) of the independent/predicting
+    variables is bad (mathematically). 
+    \begin{itemize}
+      \item It can usually be spotted fairly easily by calculating correlations
+        among the predictors and/or making scatter plots like a pairs plot.
+    \end{itemize}
+    \item Heteroscedasticity will mess more the efficiency of prediction than
+    the accuracy of it.
+    \item Outliers can mess prediction accuracy.
+    \item Here a bit of data exploration and model diagnostic plots go a long
+    way:
+    \begin{itemize}
+      \item Neat explanation of diagnostic plots can be found here
+      \url{https://library.virginia.edu/data/articles/diagnostic-plots}
+      \item Collinearity can be seen in for example a pairs plot or a
+      correlation matrix (not to be confused with e.g. "Correlation of Fixed
+      Effects" in lmer output).
+    \end{itemize}
+  \end{itemize}
+}
+
+
 \end{document}
 

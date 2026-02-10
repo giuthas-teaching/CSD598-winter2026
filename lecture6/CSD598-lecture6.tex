@@ -1,0 +1,90 @@
+\documentclass[12pt,aspectratio=169,english,finnish,pdflatex%,handout
+]{beamer}
+\definecolor{MyGreen}{RGB}{50, 120, 50}
+\usecolortheme[named=MyGreen]{structure}
+
+\usepackage{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb} 
+\usepackage{animate}
+\usepackage{multimedia}
+
+\usepackage{natbib}
+\bibpunct[: ]{(}{)}{,}{}{}{;}
+
+\usepackage{tikz}
+
+\usepackage{tipa}
+
+\usepackage{hyperref}
+
+\setbeamertemplate{navigation symbols}{}
+
+\graphicspath{{figures/}}
+
+\setlength{\leftmargini}{0pt}
+\setlength{\leftmarginii}{1em}
+
+%% Write out the names of graphics files being included 
+\newwrite\graphics
+\immediate\openout\graphics=\jobname.graphics%
+\let\oincludegraphics\includegraphics% store original \includegraphics
+\renewcommand{\includegraphics}[2][]{% prepend to it (could also use xpatch, etc.)
+  \immediate\write\graphics{#2}
+  \oincludegraphics[#1]{#2}}
+
+\newcommand\Wider[2][3em]{%
+\makebox[\linewidth][c]{%
+  \begin{minipage}{\dimexpr\textwidth+#1\relax}
+  \raggedright#2
+  \end{minipage}%
+  }%
+}
+
+\newcommand{\kommentti}[1]{
+  {\bf[#1]}
+}
+
+
+\title{CSD 598 - Winter 2026
+  \\~\\
+  Inferential statistics\\
+  Metalevel look at CSD 501
+}
+\author{Pertti Palo} 
+\date{10 Feb 2026} 
+
+
+\begin{document}
+
+\frame{\titlepage
+  \centering
+} 
+
+
+\frame{\frametitle{Last time: Visualisation to inferential statistics}
+  Any questions? Any thoughts?
+}
+
+
+\frame{\frametitle{Analysis example}
+  \begin{itemize}
+    \item This is the same example we looked at at the beginning, so same
+    caveats apply.
+    \item As it is unpublished, I ask it not be recorded, and hence will not
+    describe it here on the slides.
+    \item I am happy to talk about it in detail and show how I've done the
+    whole thing.
+  \end{itemize}
+}
+
+
+\frame{\frametitle{References}
+  
+\bibliographystyle{apalike}
+\bibliography{science_combined}
+
+}
+\end{document}
+
