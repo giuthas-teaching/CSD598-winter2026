@@ -49,11 +49,10 @@
 
 \title{CSD 598 - Winter 2026
   \\~\\
-  Inferential statistics\\
-  Metalevel look at CSD 501
+  An example of exploration and inference
 }
 \author{Pertti Palo} 
-\date{10 Feb 2026} 
+\date{24 Feb 2026} 
 
 
 \begin{document}
@@ -63,15 +62,34 @@
 } 
 
 
+\frame{\frametitle{First reflection I: Ethics}
+  Any questions? Any thoughts? What did you find most difficult about this
+  assignment?
+ }
+
+
+\frame{\frametitle{First reflection II: Ethics}
+  \begin{itemize}
+    \item Risk came up a lot unsurprisingly.
+    \item I was impressed with the level of careful consideration you showed of
+    different potential risk factors.
+    \item You can also question the training itself. One of you brought up the
+    absence of AI in the CORE materials.
+    \item Contextualisation for the reader is good to do, but it's not
+    absolutely necessary if the story of thinking is clear without the details.
+    'Keep the grader happy' is a good general rule in this context.
+  \end{itemize}
+}
+
+
 \frame{\frametitle{Last time: Visualisation to inferential statistics}
   Any questions? Any thoughts?
 }
 
 
-\frame{\frametitle{Analysis example}
+\frame{\frametitle{Exploration and inference example}
   \begin{itemize}
-    \item This is the same example we looked at at the beginning, so same
-    caveats apply.
+    \item This comes from the latest data analysis I have run.
     \item As it is unpublished, I ask it not be recorded, and hence will not
     describe it here on the slides.
     \item I am happy to talk about it in detail and show how I've done the
@@ -80,11 +98,53 @@
 }
 
 
-\frame{\frametitle{References}
-  
-\bibliographystyle{apalike}
-\bibliography{science_combined}
-
+\frame{\frametitle{Model is a test, test is a model -- sometimes}
+  \begin{itemize}
+    \item ANOVA can be seen as a single predictor (controlled variable) linear
+      regression model where the only predictor is a categorical variable. 
+    \item Simple regression -- line fitting -- can be seen as another way of
+    testing for linear (Pearson's) correlation.
+  \end{itemize}
 }
+
+
+\frame{\frametitle{Model diagnosis -- this will likely be moved to next time}
+  \begin{itemize}
+    \item Collinearity (linear correlation) of the independent/predicting
+    variables is bad (mathematically). 
+    \begin{itemize}
+      \item It can usually be spotted fairly easily by calculating correlations
+        among the predictors and/or making scatter plots like a pairs plot.
+    \end{itemize}
+    \item Heteroscedasticity will mess more the efficiency of prediction than
+    the accuracy of it.
+    \item Outliers can mess prediction accuracy.
+    \item Here a bit of data exploration and model diagnostic plots go a long
+    way:
+    \begin{itemize}
+      \item Neat explanation of diagnostic plots can be found here
+      \url{https://library.virginia.edu/data/articles/diagnostic-plots}
+      \item Collinearity can be seen in for example a pairs plot or a
+      correlation matrix (not to be confused with e.g. "Correlation of Fixed
+      Effects" in lmer output).
+    \end{itemize}
+  \end{itemize}
+}
+
+
+\frame{\frametitle{Couple of nice resources}
+  \begin{itemize}
+    \item A detailed look on ANOVA \url{https://statsandr.com/blog/anova-in-r/}. 
+    \item And ANOVA's cousin Kruskal-Wallis \url{https://statsandr.com/blog/kruskal-wallis-test-nonparametric-version-anova/}
+  \end{itemize}
+}
+
+
+% \frame{\frametitle{References}
+  
+% \bibliographystyle{apalike}
+% \bibliography{science_combined}
+
+% }
 \end{document}
 
