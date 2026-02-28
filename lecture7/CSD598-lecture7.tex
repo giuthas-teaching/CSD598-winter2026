@@ -1,0 +1,257 @@
+\documentclass[12pt,aspectratio=169,english,finnish,pdflatex%,handout
+]{beamer}
+\definecolor{MyGreen}{RGB}{50, 120, 50}
+\usecolortheme[named=MyGreen]{structure}
+
+\usepackage{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb} 
+\usepackage{animate}
+\usepackage{multimedia}
+
+\usepackage{listings}
+\usepackage{xcolor}
+ 
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+ 
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+\lstset{style=mystyle}
+
+\usepackage{natbib}
+\bibpunct[: ]{(}{)}{,}{}{}{;}
+
+\usepackage{tikz}
+
+\usepackage{tipa}
+
+\usepackage{hyperref}
+
+\setbeamertemplate{navigation symbols}{}
+
+\graphicspath{{figures/}}
+
+\setlength{\leftmargini}{0pt}
+\setlength{\leftmarginii}{1em}
+
+%% Write out the names of graphics files being included 
+\newwrite\graphics
+\immediate\openout\graphics=\jobname.graphics%
+\let\oincludegraphics\includegraphics% store original \includegraphics
+\renewcommand{\includegraphics}[2][]{% prepend to it (could also use xpatch, etc.)
+  \immediate\write\graphics{#2}
+  \oincludegraphics[#1]{#2}}
+
+\newcommand\Wider[2][3em]{%
+\makebox[\linewidth][c]{%
+  \begin{minipage}{\dimexpr\textwidth+#1\relax}
+  \raggedright#2
+  \end{minipage}%
+  }%
+}
+
+\newcommand{\kommentti}[1]{
+  {\bf[#1]}
+}
+
+
+\title{CSD 598 - Winter 2026
+  \\~\\
+  An intro to programming and statistical linear model diagnostics
+}
+\author{Pertti Palo} 
+\date{3 March 2026} 
+
+
+\begin{document}
+
+\frame{\titlepage
+  \centering
+} 
+
+
+\frame{\frametitle{Last time: Exploration and inference example}
+  Any questions? Any thoughts?
+}
+
+
+\frame{\frametitle{Intro to programming}
+  \begin{itemize}
+    \item Obviously there is a lot to dig into here.
+    \item A sufficient understanding does not require you to know too many details.
+    \item Time allowing, we'll look at different programming concepts as we
+    work through some ways of diagnosing the behaviour or statistical linear
+    models.
+    \item First, though, we'll have a look at your questions and possibly use
+    some of the following slides to answer them.
+    \begin{itemize}
+      \item We may also wander into Python or R to try things out.
+    \end{itemize}
+  \end{itemize}
+}
+
+
+\frame{\frametitle{If you are feeling couragous install these}
+    \begin{itemize}
+      \item RStudio \url{https://posit.co/downloads/}
+      \item Python \url{https://www.python.org/downloads/}
+      \item Depending on your operating system some form of app store maybe the
+      best bet for installing anything.
+      \item If you are super adventurous, install uv
+      (\url{https://docs.astral.sh/uv/getting-started/installation/}) and use
+      Python that way. (It is actually a really good idea.)
+    \end{itemize}
+}
+
+
+\begin{frame}[fragile]
+  \frametitle{Basic building blocks I}
+  \begin{lstlisting}[language=Python]
+  # These are lines comments. They are meant for humans to read
+  # and are ignored by the computer.
+
+  # Operators: Do stuff.
+  1+1
+
+  # Variables: Make the results stick around.
+  a = 1+1
+  b = 3
+      
+  # Combinations thereof: What most programming actually is.
+  c = b/a
+
+  # Functions and their siblings: Package recipes for later use.
+  square(2)
+  \end{lstlisting}
+\end{frame}
+
+
+\frame{\frametitle{Basic building blocks II}
+    \begin{itemize}
+      \item integer -- aka whole number, 
+      \item floating point number -- aka decimal number,
+      \item character -- a single character, 
+      \item string -- a piece of text made of characters, very useful to us,
+      \item lists which will usually contain one given type of variable, e.g.
+      a list of numbers or a list of strings.
+      \item and many more.
+    \end{itemize}
+}
+
+
+\begin{frame}[fragile]
+  \frametitle{Basic tools of the trade}
+  \begin{itemize}
+    \item There are many programming languages and they are suited for
+    different tasks and also differ in terms such as readability.
+    \item Most relevant to us are R, Python, Matlab, Praat scripts, LibreOffice
+    calc/Excel macros.
+    \item Code files are usually identified with a suffix that corresponds to
+    the language being used: e.g. \verb|.R| for R, \verb|.py| for Python,
+    \verb|.praat| for Praat (although the last one is not standardised).
+    \item Code can be written with essentially any text editor that will save
+    plain text (no formatting frills attached).
+  \end{itemize}
+\end{frame}
+
+
+\begin{frame}[fragile]
+  \frametitle{Actual tools of the trade}
+  \begin{itemize}
+    \item Writing code generally easier with an actual code editor or IDE (Integrated
+    Development Environment):
+    \begin{itemize}
+      \item RStudio
+      \item Jasp
+      \item VSCode (corporate and a bit scary) / VSCodium (probably doesn't
+      snitch on you)
+      \item PyCharm (often costs money)
+      \item Matlab
+    \end{itemize}
+  \item Consider using an AI helper (like Cursor, Copilot Agent, or Cline), but
+  be aware that the less common your task, the more likely they are to produce
+  only garbage.
+  \item Helpers optimised for actual code writing are probably better than
+  general generative models.
+  \end{itemize}
+\end{frame}
+
+
+\begin{frame}[fragile]
+  \frametitle{Skills of the trade}
+  \begin{itemize}
+    \item Programming style: Code is read more than written. Learn to write in
+    a clear style.
+    \item Knowledge of the tools: There will always be new ones. Dedicate some
+    time to learning new stuff.
+    \item General principles like modularity, 
+  \end{itemize}
+\end{frame}
+
+
+\frame{\frametitle{Model diagnosis}
+  \begin{itemize}
+    \item Collinearity (linear correlation) of the independent/predicting
+    variables is bad (mathematically). 
+    \begin{itemize}
+      \item It can usually be spotted fairly easily by calculating correlations
+        among the predictors and/or making scatter plots like a pairs plot.
+    \end{itemize}
+    \item Heteroscedasticity will mess more the efficiency of prediction than
+    the accuracy of it.
+    \item Outliers can mess prediction accuracy.
+    \item Here a bit of data exploration and model diagnostic plots go a long
+    way:
+    \begin{itemize}
+      \item Neat explanation of diagnostic plots can be found here
+      \url{https://library.virginia.edu/data/articles/diagnostic-plots}
+      \item Collinearity can be seen in for example a pairs plot or a
+      correlation matrix (not to be confused with e.g. "Correlation of Fixed
+      Effects" in `lmer' output).
+    \end{itemize}
+  \end{itemize}
+}
+
+
+\frame{\frametitle{Some resources}
+  \begin{itemize}
+    \item RStudio \url{https://posit.co/downloads/}
+    \item Jasp \url{https://jasp-stats.org/}
+    \item Python learning materials
+    \url{https://wiki.python.org/moin/BeginnersGuide/NonProgrammers}
+    \begin{itemize}
+      \item Especially the Interactive Courses are really good for learning programming in general.
+    \end{itemize}
+    \item Praat scripting guide \url{https://praatscriptingtutorial.com/}
+  \end{itemize}
+}
+
+
+% \frame{\frametitle{References}
+  
+% \bibliographystyle{apalike}
+% \bibliography{science_combined}
+
+% }
+\end{document}
+
